@@ -181,7 +181,7 @@ const accordionContainer = document.createElement("div");
 
   const faqContainer = document.querySelector(".faq-container");
   if(faqContainer) {
-    const tabSection = document.createElement("div");
+     const tabSection = document.createElement("div");
     tabSection.classList.add("tab-section");
 
     const tabButtons = document.createElement("div");
@@ -189,25 +189,27 @@ const accordionContainer = document.createElement("div");
 
     const tabContent = document.createElement("div");
     tabContent.classList.add("tab-content");
-    tabContent.textContent = "Hover over a button to see content";
+    tabContent.innerHTML = "Hover over a button to see content";
 
     const tabs = [
-        { label: "1", content: "This is content for Tab 1" },
-        { label: "5", content: "This is content for Tab 5" }
+        { label: "1", color: "green", content: `<h3>Big Mystery Box</h3><p><strong>1 499 CZK  1 449 CZK</strong></p><p>Contains 1 to 10 items worth CZK 1,499 or more</p><ul><li>✅ Content by gender, age and interests</li><li>✅ The value of the content always corresponds to the price</li></ul><button>Buy Now</button>` },
+        { label: "2", color: "orange", content: `<h3>Medium Mystery Box</h3><p><strong>999 CZK  949 CZK</strong></p><p>Contains 1 to 7 items worth CZK 999 or more</p><ul><li>✅ Custom surprises</li><li>✅ Great value guaranteed</li></ul><button>Buy Now</button>` },
+        { label: "3", color: "blue", content: `<h3>Small Mystery Box</h3><p><strong>499 CZK  449 CZK</strong></p><p>Contains 1 to 5 items worth CZK 499 or more</p><ul><li>✅ Fun and unique items</li><li>✅ Always worth the price</li></ul><button>Buy Now</button>` }
     ];
 
     tabs.forEach(tab => {
         const button = document.createElement("button");
         button.classList.add("tab-button");
-        button.textContent = tab.label;
+        button.textContent = `Tab ${tab.label}`;
+        button.style.backgroundColor = tab.color;
         button.addEventListener("mouseenter", () => {
-            tabContent.textContent = tab.content;
+            tabContent.innerHTML = tab.content;
         });
         tabButtons.appendChild(button);
     });
 
     tabSection.appendChild(tabButtons);
     tabSection.appendChild(tabContent);
-    faqContainer.insertAdjacentElement("afterend", tabSection);
+    accordionContainer.insertAdjacentElement("afterend", tabSection);
   }
 });
