@@ -210,6 +210,6 @@ const accordionContainer = document.createElement("div");
 
     tabSection.appendChild(tabButtons);
     tabSection.appendChild(tabContent);
-    accordionContainer.insertAdjacentElement("afterend", tabSection);
+    faqContainer.insertAdjacentElement("afterend", tabSection);
   }
 });
