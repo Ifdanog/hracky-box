@@ -141,8 +141,10 @@ document.addEventListener("DOMContentLoaded", function () {
   
 const testimonialContainer = document.querySelector(".testimonials-container");
   if (testimonialContainer) {
-  const accordionContainer = document.createElement("div");
-  accordionContainer.classList.add("faq-container");
+   const sectionTitle = document.createElement("h2");
+    sectionTitle.classList.add("faq-title");
+    sectionTitle.textContent = "Frequently Asked Questions";
+    accordionContainer.appendChild(sectionTitle);
 
   faqs.forEach((faq, index) => {
     const faqItem = document.createElement("div");
