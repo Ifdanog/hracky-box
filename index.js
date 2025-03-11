@@ -178,4 +178,36 @@ const accordionContainer = document.createElement("div");
 
     testimonialContainer.insertAdjacentElement("afterend", accordionContainer);
   }
+
+  const faqContainer = document.querySelector(".faq-container");
+  if(faqContainer) {
+    const tabSection = document.createElement("div");
+    tabSection.classList.add("tab-section");
+
+    const tabButtons = document.createElement("div");
+    tabButtons.classList.add("tab-buttons");
+
+    const tabContent = document.createElement("div");
+    tabContent.classList.add("tab-content");
+    tabContent.textContent = "Hover over a button to see content";
+
+    const tabs = [
+        { label: "1", content: "This is content for Tab 1" },
+        { label: "5", content: "This is content for Tab 5" }
+    ];
+
+    tabs.forEach(tab => {
+        const button = document.createElement("button");
+        button.classList.add("tab-button");
+        button.textContent = tab.label;
+        button.addEventListener("mouseenter", () => {
+            tabContent.textContent = tab.content;
+        });
+        tabButtons.appendChild(button);
+    });
+
+    tabSection.appendChild(tabButtons);
+    tabSection.appendChild(tabContent);
+    accordionContainer.insertAdjacentElement("afterend", tabSection);
+  }
 });
