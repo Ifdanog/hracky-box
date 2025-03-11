@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const guarantee = document.querySelector(".benefit-banners-full-width");
   guarantee.insertAdjacentHTML("afterend", mysteryBoxHTML);
 
+  const mysteryBox = document.querySelector(".mystery-box-container");
   if(mysteryBox) {
      const tabSection = document.createElement("div");
     tabSection.classList.add("tab-section");
