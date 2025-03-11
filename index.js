@@ -122,6 +122,7 @@ document.addEventListener("DOMContentLoaded", function () {
       showTestimonial(currentTestimonial);
     }, 4000); // Auto-slide every 4 seconds
   }
+  
   const faqs = [
     {
       question: "What is your return policy?",
@@ -137,7 +138,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "Once your order is shipped, you will receive a tracking number via email.",
     },
   ];
-
+  if (testimonialContainer) {
   const accordionContainer = document.createElement("div");
   accordionContainer.classList.add("faq-container");
 
@@ -170,7 +171,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const testimonialContainer = document.querySelector(".testimonal-container");
   console.log(testimonialContainer);
-  if (testimonialContainer) {
     testimonialContainer.insertAdjacentElement("afterend", accordionContainer);
   }
 });
