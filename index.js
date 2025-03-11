@@ -139,7 +139,7 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   ];
   
-  const testimonialContainer = document.querySelector(".testimonal-container");
+const testimonialContainer = document.querySelector(".testimonials-container");
   if (testimonialContainer) {
   const accordionContainer = document.createElement("div");
   accordionContainer.classList.add("faq-container");
