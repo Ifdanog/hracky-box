@@ -138,6 +138,8 @@ document.addEventListener("DOMContentLoaded", function () {
         "Once your order is shipped, you will receive a tracking number via email.",
     },
   ];
+  
+  const testimonialContainer = document.querySelector(".testimonal-container");
   if (testimonialContainer) {
   const accordionContainer = document.createElement("div");
   accordionContainer.classList.add("faq-container");
@@ -169,8 +171,6 @@ document.addEventListener("DOMContentLoaded", function () {
     accordionContainer.appendChild(faqItem);
   });
 
-  const testimonialContainer = document.querySelector(".testimonal-container");
-  console.log(testimonialContainer);
     testimonialContainer.insertAdjacentElement("afterend", accordionContainer);
   }
 });
