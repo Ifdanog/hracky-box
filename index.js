@@ -28,8 +28,8 @@ document.addEventListener("DOMContentLoaded", function () {
   guarantee.insertAdjacentHTML("afterend", mysteryBoxHTML);
 
   // After Mystery Box is added, insert the Gallery
-  const mysteryBox = document.querySelector(".mystery-box-container");
-  if (mysteryBox) {
+  const tabSection = document.querySelector(".tab-section");
+  if (tabSection) {
     const galleryHTML = `
             <div class="gallery-container">
                 <div class="gallery-item">
@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
         `;
 
     // Insert Gallery below Mystery Box
-    mysteryBox.insertAdjacentHTML("afterend", galleryHTML);
+    tabSection.insertAdjacentHTML("afterend", galleryHTML);
   }
   const gallery = document.querySelector(".gallery-container");
   if (gallery) {
@@ -210,6 +210,6 @@ const accordionContainer = document.createElement("div");
 
     tabSection.appendChild(tabButtons);
     tabSection.appendChild(tabContent);
-    faqContainer.insertAdjacentElement("afterend", tabSection);
+    mysteryBox.insertAdjacentElement("afterend", tabSection);
   }
 });
