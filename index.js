@@ -169,6 +169,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   const testimonialContainer = document.querySelector(".testimonal-container");
+  console.log(testimonialContainer);
   if (testimonialContainer) {
     testimonialContainer.insertAdjacentElement("afterend", accordionContainer);
   }
