@@ -1,36 +1,36 @@
 document.addEventListener("DOMContentLoaded", function () {
   let mysteryBoxHTML = `
-        <div class="mystery-box-container">
-            <!-- Left Section: Description -->
-            <div class="mystery-box-text">
-                <h2>What is a Mystery Box?</h2>
-                <p><span>Mystery Box</span> is a gift box full of <span>mysterious items.</span> You will only find out <strong>what is inside after you open it! 🎁</strong></p>
-                
-                <h2>What will I find inside?</h2>
-                <ul>
-                    <li><span>1.</span> We will carefully compile the content of the Box according to the <span>interests</span>, <span>gender</span>, and <span>age</span> of the future Box owner.</li>
-                    <li><span>2.</span> Inside, he/she will find <span>fun</span>, <span>valuable</span>, <span>unusual</span>, and simply cool items, <span>custom</span>-selected for him/her. ❤️</li>
-                    <li><span>3.</span> The fun and impatient unboxing of the Box is accompanied by <span>moments of tension</span> that will take you back to your childhood. 😊</li>
-                </ul>
-            </div>
+          <div class="mystery-box-container">
+              <!-- Levá sekce: Popis -->
+              <div class="mystery-box-text">
+                  <h2>Co je Mystery Box?</h2>
+                  <p><span>Mystery Box</span> je dárková krabice plná <span>mysteriózních předmětů.</span> Zjistíte <strong>co je uvnitř až po otevření! 🎁</strong></p>
+                  
+                  <h2>Co najdu uvnitř?</h2>
+                  <ul>
+                      <li><span>1.</span> Obsah krabice pečlivě sestavíme podle <span>zájmů</span>, <span>pohlaví</span> a <span>věku</span> budoucího majitele krabice.</li>
+                      <li><span>2.</span> Uvnitř najde <span>zábavné</span>, <span>cenné</span>, <span>neobvyklé</span> a prostě skvělé předměty, <span>vybrané na míru</span> pro něj/ní. ❤️</li>
+                      <li><span>3.</span> Zábavné a netrpělivé rozbalování krabice je doprovázeno <span>chvílemi napětí</span>, které vás vrátí do dětství. 😊</li>
+                  </ul>
+              </div>
+  
+              <!-- Pravá sekce: Video -->
+              <div class="mystery-box-image">
+                  <video style="width: 100%;" controls>
+                    <source src="https://www.hracky-box.cz/user/documents/upload/756s2e.mp4" type="video/mp4">
+                    Váš prohlížeč nepodporuje video tag.
+                  </video>
+              </div>
+          </div>
+      `;
 
-            <!-- Right Section: Video -->
-            <div class="mystery-box-image">
-                <video style="width: 100%;" controls>
-                  <source src="https://www.hracky-box.cz/user/documents/upload/756s2e.mp4" type="video/mp4">
-                  Your browser does not support the video tag.
-                </video>
-            </div>
-        </div>
-    `;
-
-  // Insert Mystery Box below .benefit-banners-full-width
+  // Vložení Mystery Box pod .benefit-banners-full-width
   const guarantee = document.querySelector(".benefit-banners-full-width");
   guarantee.insertAdjacentHTML("afterend", mysteryBoxHTML);
 
   const mysteryBox = document.querySelector(".mystery-box-container");
-  if(mysteryBox) {
-     const tabSection = document.createElement("div");
+  if (mysteryBox) {
+    const tabSection = document.createElement("div");
     tabSection.classList.add("tab-section");
 
     const tabButtons = document.createElement("div");
@@ -38,96 +38,108 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const tabContent = document.createElement("div");
     tabContent.classList.add("tab-content");
-    tabContent.innerHTML = "Hover over a button to see content";
+    tabContent.innerHTML = "Najděte obsah přejetím přes tlačítko";
 
     const tabs = [
-        { label: "1", color: "green", content: `<h3>Big Mystery Box</h3><p><strong>1 499 CZK  1 449 CZK</strong></p><p>Contains 1 to 10 items worth CZK 1,499 or more</p><ul><li>✅ Content by gender, age and interests</li><li>✅ The value of the content always corresponds to the price</li></ul><button>Buy Now</button>` },
-        { label: "2", color: "orange", content: `<h3>Medium Mystery Box</h3><p><strong>999 CZK  949 CZK</strong></p><p>Contains 1 to 7 items worth CZK 999 or more</p><ul><li>✅ Custom surprises</li><li>✅ Great value guaranteed</li></ul><button>Buy Now</button>` },
-        { label: "3", color: "blue", content: `<h3>Small Mystery Box</h3><p><strong>499 CZK  449 CZK</strong></p><p>Contains 1 to 5 items worth CZK 499 or more</p><ul><li>✅ Fun and unique items</li><li>✅ Always worth the price</li></ul><button>Buy Now</button>` }
+      {
+        label: "1",
+        color: "green",
+        content: `<h3>Velký Mystery Box</h3><p><strong>1 499 CZK  1 449 CZK</strong></p><p>Obsahuje 1 až 10 předmětů v hodnotě 1 499 CZK nebo více</p><ul><li>✅ Obsah podle pohlaví, věku a zájmů</li><li>✅ Hodnota obsahu vždy odpovídá ceně</li></ul><button>Koupit nyní</button>`,
+      },
+      {
+        label: "2",
+        color: "orange",
+        content: `<h3>Střední Mystery Box</h3><p><strong>999 CZK  949 CZK</strong></p><p>Obsahuje 1 až 7 předmětů v hodnotě 999 CZK nebo více</p><ul><li>✅ Překvapení na míru</li><li>✅ Skvělá hodnota zaručena</li></ul><button>Koupit nyní</button>`,
+      },
+      {
+        label: "3",
+        color: "blue",
+        content: `<h3>Malý Mystery Box</h3><p><strong>499 CZK  449 CZK</strong></p><p>Obsahuje 1 až 5 předmětů v hodnotě 499 CZK nebo více</p><ul><li>✅ Zábavné a jedinečné předměty</li><li>✅ Vždy odpovídá ceně</li></ul><button>Koupit nyní</button>`,
+      },
     ];
 
-    tabs.forEach(tab => {
-        const button = document.createElement("button");
-        button.classList.add("tab-button");
-        button.textContent = `Tab ${tab.label}`;
-        button.style.backgroundColor = tab.color;
-        button.addEventListener("mouseenter", () => {
-            tabContent.innerHTML = tab.content;
-        });
-        tabButtons.appendChild(button);
+    tabs.forEach((tab) => {
+      const button = document.createElement("button");
+      button.classList.add("tab-button");
+      button.textContent = `Záložka ${tab.label}`;
+      button.style.backgroundColor = tab.color;
+      button.addEventListener("mouseenter", () => {
+        tabContent.innerHTML = tab.content;
+      });
+      tabButtons.appendChild(button);
     });
 
     tabSection.appendChild(tabButtons);
     tabSection.appendChild(tabContent);
     mysteryBox.insertAdjacentElement("afterend", tabSection);
   }
-  
-  // After Mystery Box is added, insert the Gallery
+
+  // Po přidání Mystery Box vložte galerii
   const tabSection = document.querySelector(".tab-section");
   if (tabSection) {
     const galleryHTML = `
-            <div class="gallery-container">
-                <div class="gallery-item">
-                    <img src="https://cdn.myshoptet.com/usr/www.hracky-box.cz/user/shop/big/45-3_whatsapp-image-2025-03-08-at-21-15-42.jpg?67cd87dd" alt="Gallery Image">
-                    <p>Mystery awaits inside! 🎁</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://cdn.myshoptet.com/usr/www.hracky-box.cz/user/shop/big/45-3_whatsapp-image-2025-03-08-at-21-15-42.jpg?67cd87dd" alt="Gallery Image">
-                    <p>Unbox surprises you never expected! 😲</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://cdn.myshoptet.com/usr/www.hracky-box.cz/user/shop/big/45-3_whatsapp-image-2025-03-08-at-21-15-42.jpg?67cd87dd" alt="Gallery Image">
-                    <p>What's inside? Only one way to find out! 🔍</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://cdn.myshoptet.com/usr/www.hracky-box.cz/user/shop/big/45-3_whatsapp-image-2025-03-08-at-21-15-42.jpg?67cd87dd" alt="Gallery Image">
-                    <p>Guaranteed excitement with every box! 🎉</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://cdn.myshoptet.com/usr/www.hracky-box.cz/user/shop/big/45-3_whatsapp-image-2025-03-08-at-21-15-42.jpg?67cd87dd" alt="Gallery Image">
-                    <p>Perfect gift for thrill seekers! 🎁</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://cdn.myshoptet.com/usr/www.hracky-box.cz/user/shop/big/45-3_whatsapp-image-2025-03-08-at-21-15-42.jpg?67cd87dd" alt="Gallery Image">
-                    <p>Each box tells a unique story! 📦</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://cdn.myshoptet.com/usr/www.hracky-box.cz/user/shop/big/45-3_whatsapp-image-2025-03-08-at-21-15-42.jpg?67cd87dd" alt="Gallery Image">
-                    <p>Something fun, something valuable, something special! ✨</p>
-                </div>
-            </div>
-        `;
+              <div class="gallery-container">
+                  <div class="gallery-item">
+                      <img src="https://cdn.myshoptet.com/usr/www.hracky-box.cz/user/shop/big/45-3_whatsapp-image-2025-03-08-at-21-15-42.jpg?67cd87dd" alt="Galerie obrázek">
+                      <p>Mystérium čeká uvnitř! 🎁</p>
+                  </div>
+                  <div class="gallery-item">
+                      <img src="https://cdn.myshoptet.com/usr/www.hracky-box.cz/user/shop/big/45-3_whatsapp-image-2025-03-08-at-21-15-42.jpg?67cd87dd" alt="Galerie obrázek">
+                      <p>Rozbalte překvapení, které jste nikdy nečekali! 😲</p>
+                  </div>
+                  <div class="gallery-item">
+                      <img src="https://cdn.myshoptet.com/usr/www.hracky-box.cz/user/shop/big/45-3_whatsapp-image-2025-03-08-at-21-15-42.jpg?67cd87dd" alt="Galerie obrázek">
+                      <p>Co je uvnitř? Jen jeden způsob, jak to zjistit! 🔍</p>
+                  </div>
+                  <div class="gallery-item">
+                      <img src="https://cdn.myshoptet.com/usr/www.hracky-box.cz/user/shop/big/45-3_whatsapp-image-2025-03-08-at-21-15-42.jpg?67cd87dd" alt="Galerie obrázek">
+                      <p>Zaručené vzrušení s každou krabicí! 🎉</p>
+                  </div>
+                  <div class="gallery-item">
+                      <img src="https://cdn.myshoptet.com/usr/www.hracky-box.cz/user/shop/big/45-3_whatsapp-image-2025-03-08-at-21-15-42.jpg?67cd87dd" alt="Galerie obrázek">
+                      <p>Perfektní dárek pro milovníky vzrušení! 🎁</p>
+                  </div>
+                  <div class="gallery-item">
+                      <img src="https://cdn.myshoptet.com/usr/www.hracky-box.cz/user/shop/big/45-3_whatsapp-image-2025-03-08-at-21-15-42.jpg?67cd87dd" alt="Galerie obrázek">
+                      <p>Každá krabice vypráví jedinečný příběh! 📦</p>
+                  </div>
+                  <div class="gallery-item">
+                      <img src="https://cdn.myshoptet.com/usr/www.hracky-box.cz/user/shop/big/45-3_whatsapp-image-2025-03-08-at-21-15-42.jpg?67cd87dd" alt="Galerie obrázek">
+                      <p>Něco zábavného, něco cenného, něco zvláštního! ✨</p>
+                  </div>
+              </div>
+          `;
 
-    // Insert Gallery below Mystery Box
+    // Vložení galerie pod Mystery Box
     tabSection.insertAdjacentHTML("afterend", galleryHTML);
   }
   const gallery = document.querySelector(".gallery-container");
   if (gallery) {
     const testimonialsHTML = `
-            <div class="testimonials-container">
-                <h2>What Our Customers Say</h2>
-                <div class="testimonials-carousel">
-                    <div class="testimonial active">
-                        <p>"I had so much fun opening my Mystery Box! Everything inside was a total surprise, and I loved each item!"</p>
-                        <strong>- Alice M.</strong>
-                    </div>
-                    <div class="testimonial">
-                        <p>"The perfect gift idea! I ordered one for my nephew, and he couldn't stop talking about it!"</p>
-                        <strong>- David S.</strong>
-                    </div>
-                    <div class="testimonial">
-                        <p>"Such a unique concept! The items were well thought out and personalized to my interests!"</p>
-                        <strong>- Emily R.</strong>
-                    </div>
-                </div>
-                <button class="prev">&lt;</button>
-                <button class="next">&gt;</button>
-            </div>
-        `;
+              <div class="testimonials-container">
+                  <h2>Co říkají naši zákazníci</h2>
+                  <div class="testimonials-carousel">
+                      <div class="testimonial active">
+                          <p>"Měla jsem takovou zábavu při otevírání mého Mystery Boxu! Všechny předměty uvnitř byly naprostým překvapením a každou jsem si zamilovala!"</p>
+                          <strong>- Alice M.</strong>
+                      </div>
+                      <div class="testimonial">
+                          <p>"Perfektní nápad na dárek! Objednala jsem jeden pro svého synovce a nemohl přestat mluvit o tom!"</p>
+                          <strong>- David S.</strong>
+                      </div>
+                      <div class="testimonial">
+                          <p>"Tak jedinečný koncept! Předměty byly dobře promyšlené a přizpůsobené mým zájmům!"</p>
+                          <strong>- Emily R.</strong>
+                      </div>
+                  </div>
+                  <button class="prev">&lt;</button>
+                  <button class="next">&gt;</button>
+              </div>
+          `;
 
     gallery.insertAdjacentHTML("afterend", testimonialsHTML);
 
-    // Carousel Logic
+    // Logika karuselu
     let currentTestimonial = 0;
     const testimonials = document.querySelectorAll(".testimonial");
     const totalTestimonials = testimonials.length;
@@ -155,62 +167,64 @@ document.addEventListener("DOMContentLoaded", function () {
     setInterval(function () {
       currentTestimonial = (currentTestimonial + 1) % totalTestimonials;
       showTestimonial(currentTestimonial);
-    }, 4000); // Auto-slide every 4 seconds
+    }, 4000); // Automatické přepínání každé 4 sekundy
   }
-  
+
   const faqs = [
     {
-      question: "What is your return policy?",
-      answer: "You can return any item within 30 days of purchase.",
+      question: "Jaká je vaše politika vracení zboží?",
+      answer: "Můžete vrátit jakýkoli předmět do 30 dnů od nákupu.",
     },
     {
-      question: "Do you offer international shipping?",
-      answer: "Yes, we ship to most countries worldwide.",
+      question: "Nabízíte mezinárodní dopravu?",
+      answer: "Ano, zasíláme do většiny zemí po celém světě.",
     },
     {
-      question: "How can I track my order?",
+      question: "Jak mohu sledovat svou objednávku?",
       answer:
-        "Once your order is shipped, you will receive a tracking number via email.",
+        "Jakmile bude vaše objednávka odeslána, obdržíte sledovací číslo e-mailem.",
     },
   ];
-  
-const testimonialContainer = document.querySelector(".testimonials-container");
+
+  const testimonialContainer = document.querySelector(
+    ".testimonials-container"
+  );
   if (testimonialContainer) {
-const accordionContainer = document.createElement("div");
+    const accordionContainer = document.createElement("div");
     accordionContainer.classList.add("faq-container");
 
-    // Add Section Title
+    // Přidání názvu sekce
     const sectionTitle = document.createElement("h2");
     sectionTitle.classList.add("faq-title");
-    sectionTitle.textContent = "Frequently Asked Questions";
+    sectionTitle.textContent = "Často kladené otázky";
     accordionContainer.appendChild(sectionTitle);
-  faqs.forEach((faq, index) => {
-    const faqItem = document.createElement("div");
-    faqItem.classList.add("faq-item");
+    faqs.forEach((faq, index) => {
+      const faqItem = document.createElement("div");
+      faqItem.classList.add("faq-item");
 
-    const question = document.createElement("button");
-    question.classList.add("faq-question");
-    question.textContent = faq.question;
-    question.setAttribute("data-index", index);
+      const question = document.createElement("button");
+      question.classList.add("faq-question");
+      question.textContent = faq.question;
+      question.setAttribute("data-index", index);
 
-    const answer = document.createElement("div");
-    answer.classList.add("faq-answer");
-    answer.textContent = faq.answer;
-    answer.style.display = "none";
+      const answer = document.createElement("div");
+      answer.classList.add("faq-answer");
+      answer.textContent = faq.answer;
+      answer.style.display = "none";
 
-    question.addEventListener("click", function () {
-      const isVisible = answer.style.display === "block";
-      document
-        .querySelectorAll(".faq-answer")
-        .forEach((ans) => (ans.style.display = "none"));
-      answer.style.display = isVisible ? "none" : "block";
+      question.addEventListener("click", function () {
+        const isVisible = answer.style.display === "block";
+        document
+          .querySelectorAll(".faq-answer")
+          .forEach((ans) => (ans.style.display = "none"));
+        answer.style.display = isVisible ? "none" : "block";
+      });
+
+      faqItem.appendChild(question);
+      faqItem.appendChild(answer);
+      accordionContainer.appendChild(faqItem);
     });
 
-    faqItem.appendChild(question);
-    faqItem.appendChild(answer);
-    accordionContainer.appendChild(faqItem);
-  });
-
     testimonialContainer.insertAdjacentElement("afterend", accordionContainer);
-  }  
+  }
 });
