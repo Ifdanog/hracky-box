@@ -16,9 +16,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
             <!-- Right Section: Video -->
             <div class="mystery-box-image">
-                <div style="width: 100%; height: 0px; position: relative; padding-bottom: 100.000%;">
-                    <iframe src="https://streamable.com/e/756s2e?quality=highest" frameborder="0" width="100%" height="100%" allowfullscreen style="width: 100%; height: 100%; position: absolute;"></iframe>
-                </div>
+                <video width="320" height="240" controls>
+                  <source src="https://www.hracky-box.cz/user/documents/upload/756s2e.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
             </div>
         </div>
     `;
