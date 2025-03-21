@@ -53,10 +53,6 @@ document.addEventListener("DOMContentLoaded", function () {
         button.classList.add("tab-button");
         button.textContent = `Záložka ${tab.label}`;
         button.style.backgroundColor = tab.color;
-        button.addEventListener("mouseenter", () => {
-            tabContent.innerHTML = tab.content;
-        });
-
         tabButtons.appendChild(button);
 
         // Show first tab by default
@@ -71,6 +67,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   const btn = document.querySelector(".btn");
+  console.log(btn);
   btn.addEventListener("click", function () {
 
     // Create the modal container
