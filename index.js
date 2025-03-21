@@ -124,37 +124,49 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const addToCart = document.querySelector("#add-to-cart-btn");
     console.log(addToCart);
-    addToCart.addEventListener("click", function (event) {
-        const productId = 45; // Replace with your actual product ID
-        const priceId = 66; // Ensure this matches the selected variant
-        const language = "cs"; // Czech language
-        const quantity = document.getElementById("product-quantity").value;
+    addToCart.addEventListener("click", function () {
+    const productId = 45;
+    const language = "cs";
+    const quantity = document.getElementById("product-quantity").value;
+    
+    // Get selected variant
+    const selectedGender = document.querySelector(".gender-options img.active")?.alt || "Male";
+    const selectedAge = document.querySelector(".age-options select").value || "3years";
+    const variantKey = `${selectedGender}-${selectedAge}`;
+    
+    // Get correct priceId
+    const variantMapping = {
+        "Male-3years": 101, 
+        "Male-5years": 102, 
+        "Female-3years": 103, 
+        "Female-5years": 104
+    };
+    const priceId = variantMapping[variantKey] || 101; // Default variant
 
-        // Prepare form data
-        const formData = new FormData();
-        formData.append("productId", productId);
-        formData.append("priceId", priceId);
-        formData.append("language", language);
-        formData.append("amount", quantity);
+    // Prepare form data
+    const formData = new FormData();
+    formData.append("productId", productId);
+    formData.append("priceId", priceId);
+    formData.append("language", language);
+    formData.append("amount", quantity);
 
-        fetch("https://www.hracky-box.cz/action/Cart/addCartItem/?simple_ajax_cart=1", {
-            method: "POST",
-            body: formData,
-            headers: {
-                "X-Requested-With": "XMLHttpRequest" // Helps with AJAX requests
-            }
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.code === 200) {
-                alert("Product successfully added to cart!");
-            } else {
-                alert("Error adding product to cart.");
-                console.error(data);
-            }
-        })
-        .catch(error => console.error("Fetch error:", error));
+    fetch("https://www.hracky-box.cz/action/Cart/addCartItem/?simple_ajax_cart=1", {
+        method: "POST",
+        body: formData,
+        headers: { "X-Requested-With": "XMLHttpRequest" }
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.code === 200) {
+            alert("Product successfully added to cart!");
+        } else {
+            alert("Error adding product.");
+            console.error(data);
+        }
+    })
+    .catch(error => console.error("Fetch error:", error));
 });
+
 
 
         // Add styles dynamically
