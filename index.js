@@ -74,12 +74,8 @@ document.addEventListener("DOMContentLoaded", function () {
     mysteryBox.insertAdjacentElement("afterend", tabSection);
   }
 
-  document.addEventListener("DOMContentLoaded", function () {
-    // Create the button
-    const button = document.createElement("button");
-    button.classList.add("tab-button");
-    button.innerText = "Open Mystery Box";
-    document.body.appendChild(button);
+  const btn = document.querySelector(".tab-buttons");
+  btn.addEventListener("click", function () {
 
     // Create the modal container
     const modal = document.createElement("div");
@@ -220,7 +216,6 @@ document.addEventListener("DOMContentLoaded", function () {
             modal.style.display = "none";
         }
     });
-});
 
 
   // Po přidání Mystery Box vložte galerii
