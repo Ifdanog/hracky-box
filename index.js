@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
       {
         label: "1",
         color: "green",
-        content: `<h3>Velký Mystery Box</h3><p><strong>1 499 CZK  1 449 CZK</strong></p><p>Obsahuje 1 až 10 předmětů v hodnotě 1 499 CZK nebo více</p><ul><li>✅ Obsah podle pohlaví, věku a zájmů</li><li>✅ Hodnota obsahu vždy odpovídá ceně</li></ul><button class="btn">Koupit nyní</button>`,
+        content: `<h3>Velký Mystery Box</h3><p><strong>1 499 CZK  1 449 CZK</strong></p><p>Obsahuje 1 až 10 předmětů v hodnotě 1 499 CZK nebo více</p><ul><li>✅ Obsah podle pohlaví, věku a zájmů</li><li>✅ Hodnota obsahu vždy odpovídá ceně</li></ul><button class="butn">Koupit nyní</button>`,
       }
     ];
 
@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
     mysteryBox.insertAdjacentElement("afterend", tabSection);
   }
 
-  const btn = document.querySelector(".btn");
+  const btn = document.querySelector(".butn");
   console.log(btn);
   btn.addEventListener("click", function () {
 
