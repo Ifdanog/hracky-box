@@ -44,18 +44,8 @@ document.addEventListener("DOMContentLoaded", function () {
       {
         label: "1",
         color: "green",
-        content: `<h3>Velký Mystery Box</h3><p><strong>1 499 CZK  1 449 CZK</strong></p><p>Obsahuje 1 až 10 předmětů v hodnotě 1 499 CZK nebo více</p><ul><li>✅ Obsah podle pohlaví, věku a zájmů</li><li>✅ Hodnota obsahu vždy odpovídá ceně</li></ul><button>Koupit nyní</button>`,
-      },
-      {
-        label: "2",
-        color: "orange",
-        content: `<h3>Střední Mystery Box</h3><p><strong>999 CZK  949 CZK</strong></p><p>Obsahuje 1 až 7 předmětů v hodnotě 999 CZK nebo více</p><ul><li>✅ Překvapení na míru</li><li>✅ Skvělá hodnota zaručena</li></ul><button>Koupit nyní</button>`,
-      },
-      {
-        label: "3",
-        color: "blue",
-        content: `<h3>Malý Mystery Box</h3><p><strong>499 CZK  449 CZK</strong></p><p>Obsahuje 1 až 5 předmětů v hodnotě 499 CZK nebo více</p><ul><li>✅ Zábavné a jedinečné předměty</li><li>✅ Vždy odpovídá ceně</li></ul><button>Koupit nyní</button>`,
-      },
+        content: `<h3>Velký Mystery Box</h3><p><strong>1 499 CZK  1 449 CZK</strong></p><p>Obsahuje 1 až 10 předmětů v hodnotě 1 499 CZK nebo více</p><ul><li>✅ Obsah podle pohlaví, věku a zájmů</li><li>✅ Hodnota obsahu vždy odpovídá ceně</li></ul><button class="btn">Koupit nyní</button>`,
+      }
     ];
 
     tabs.forEach((tab) => {
@@ -74,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
     mysteryBox.insertAdjacentElement("afterend", tabSection);
   }
 
-  const btn = document.querySelector(".tab-buttons");
+  const btn = document.querySelector(".btn");
   btn.addEventListener("click", function () {
 
     // Create the modal container
@@ -103,15 +93,15 @@ document.addEventListener("DOMContentLoaded", function () {
                 <option>5-6 years</option>
                 <option>7-8 years</option>
                 <option>9-13 years</option>
-                <option>14-17 years</option>
-                <option>18-21 years</option>
-                <option>22-25 years</option>
-                <option>26-29 years</option>
-                <option>30-35 years</option>
-                <option>36-44 years</option>
-                <option>45-54 years</option>
-                <option>55-64 years</option>
-                <option>65-74 years</option>
+                <option>14-17 years old</option>
+                <option>18-21 years old</option>
+                <option>22-25 years old</option>
+                <option>26-29 years old</option>
+                <option>30-35 years old</option>
+                <option>36-44 years old</option>
+                <option>45-54 years old</option>
+                <option>55-64 years old</option>
+                <option>65-74 years old</option>
                 <option>75 years and over</option>
             </select>
 
