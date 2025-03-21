@@ -128,11 +128,46 @@ document.addEventListener("DOMContentLoaded", function () {
                 </div>
 
                 <!-- Add to Cart Button -->
-                <button class="btn add-to-cart">Přidat do košíku</button>
+                <button id="add-to-cart-btn" class="btn add-to-cart">Přidat do košíku</button>
             </div>
         `;
 
         document.body.appendChild(modal);
+
+    document.addEventListener("click", function (event) {
+    if (event.target && event.target.id === "add-to-cart-btn") {
+        const productId = 45; // Replace with your actual product ID
+        const priceId = 66; // Ensure this matches the selected variant
+        const language = "cs"; // Czech language
+        const quantity = document.getElementById("product-quantity").value;
+
+        // Prepare form data
+        const formData = new FormData();
+        formData.append("productId", productId);
+        formData.append("priceId", priceId);
+        formData.append("language", language);
+        formData.append("amount", quantity);
+console.log(formData);
+        fetch("https://www.hracky-box.cz/action/Cart/addCartItem/?simple_ajax_cart=1", {
+            method: "POST",
+            body: formData,
+            headers: {
+                "X-Requested-With": "XMLHttpRequest" // Helps with AJAX requests
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === "success") {
+                alert("Product successfully added to cart!");
+            } else {
+                alert("Error adding product to cart.");
+                console.error(data);
+            }
+        })
+        .catch(error => console.error("Fetch error:", error));
+    }
+});
+
 
         // Add styles dynamically
         const style = document.createElement("style");
