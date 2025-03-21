@@ -122,8 +122,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         document.body.appendChild(modal);
 
-    document.addEventListener("click", function (event) {
-    if (event.target && event.target.id === "add-to-cart-btn") {
+    const addToCartBtn = document.querySelector("#add-to-cart-btn");
+    addToCartBtn.addEventListener("click", function (event) {
         const productId = 45; // Replace with your actual product ID
         const priceId = 66; // Ensure this matches the selected variant
         const language = "cs"; // Czech language
@@ -153,7 +153,6 @@ console.log(formData);
             }
         })
         .catch(error => console.error("Fetch error:", error));
-    }
 });
 
 
