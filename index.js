@@ -141,7 +141,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "Female-5years": 104
     };
     const priceId = variantMapping[variantKey] || 101; // Default variant
-
+console.log(priceId);
     // Prepare form data
     const formData = new FormData();
     formData.append("productId", productId);
