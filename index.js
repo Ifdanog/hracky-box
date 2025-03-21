@@ -77,153 +77,217 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Modal content
     modal.innerHTML = `
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Mini Mystery Box</h2>
-            <p><strong>599 CZK</strong></p>
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Mini Mystery Box</h2>
+                <p><strong>599 CZK</strong></p>
 
-            <h3>Who is the Mystery Box for?</h3>
-            <p>Select Gender</p>
-            <div class="gender-options">
-                <img src="https://mystery-box.cz/wp-content/uploads/2021/03/pohlavi-zena.png" alt="Female">
-                <img src="https://mystery-box.cz/wp-content/uploads/2021/03/pohlavi-muz.png" alt="Male">
-                <img src="https://mystery-box.cz/wp-content/uploads/2021/03/gender-par.png" alt="Both">
+                <h3>Who is the Mystery Box for?</h3>
+                <p>Select Gender</p>
+                <div class="gender-options">
+                    <img src="https://mystery-box.cz/wp-content/uploads/2021/03/pohlavi-zena.png" alt="Female">
+                    <img src="https://mystery-box.cz/wp-content/uploads/2021/03/pohlavi-muz.png" alt="Male">
+                    <img src="https://mystery-box.cz/wp-content/uploads/2021/03/gender-par.png" alt="Both">
+                </div>
+
+                <p>Select Age</p>
+                <select>
+                    <option>Select an option</option>
+                    <option>5-6 years</option>
+                    <option>7-8 years</option>
+                    <option>9-13 years</option>
+                    <option>14-17 years old</option>
+                    <option>18-21 years old</option>
+                    <option>22-25 years old</option>
+                    <option>26-29 years old</option>
+                    <option>30-35 years old</option>
+                    <option>36-44 years old</option>
+                    <option>45-54 years old</option>
+                    <option>55-64 years old</option>
+                    <option>65-74 years old</option>
+                    <option>75 years and over</option>
+                </select>
+
+                <h3>Select interests (optional)</h3>
+                <div class="interests">
+                    <label><input type="checkbox"> Electronics 🖥️</label>
+                    <label><input type="checkbox"> Car accessories 🚗</label>
+                    <label><input type="checkbox"> Gaming 🎮</label>
+                    <label><input type="checkbox"> Home Comfort 🏠</label>
+                    <label><input type="checkbox"> Beauty 💄</label>
+                    <label><input type="checkbox"> Garden 🌿</label>
+                    <label><input type="checkbox"> Handyman 🔨</label>
+                </div>
+
+                <!-- Quantity Selector -->
+                <h3>Quantity</h3>
+                <div class="quantity-container">
+                    <button class="qty-btn minus">−</button>
+                    <input type="number" class="quantity" value="1" min="1">
+                    <button class="qty-btn plus">+</button>
+                </div>
+
+                <!-- Add to Cart Button -->
+                <button class="btn add-to-cart">Přidat do košíku</button>
             </div>
+        `;
 
-            <p>Select Age</p>
-            <select>
-                <option>Select an option</option>
-                <option>5-6 years</option>
-                <option>7-8 years</option>
-                <option>9-13 years</option>
-                <option>14-17 years old</option>
-                <option>18-21 years old</option>
-                <option>22-25 years old</option>
-                <option>26-29 years old</option>
-                <option>30-35 years old</option>
-                <option>36-44 years old</option>
-                <option>45-54 years old</option>
-                <option>55-64 years old</option>
-                <option>65-74 years old</option>
-                <option>75 years and over</option>
-            </select>
+        document.body.appendChild(modal);
 
-            <h3>Select interests (optional)</h3>
-            <div class="interests">
-                <label><input type="checkbox"> Electronics 🖥️</label>
-                <label><input type="checkbox"> Car accessories 🚗</label>
-                <label><input type="checkbox"> Gaming 🎮</label>
-                <label><input type="checkbox"> Home Comfort 🏠</label>
-                <label><input type="checkbox"> Beauty 💄</label>
-                <label><input type="checkbox"> Garden 🌿</label>
-                <label><input type="checkbox"> Handyman 🔨</label>
-            </div>
-        </div>
-    `;
+        // Add styles dynamically
+        const style = document.createElement("style");
+        style.innerHTML = `
+            /* Modal Background */
+            .modal {
+                display: flex;
+                position: fixed;
+                z-index: 1000;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.5);
+                align-items: center;
+                justify-content: center;
+            }
 
-    document.body.appendChild(modal);
+            /* Modal Content */
+            .modal-content {
+                background-color: #2F6C7E;
+                color: white;
+                padding: 20px;
+                border-radius: 10px;
+                width: 400px;
+                text-align: center;
+            }
 
-    // Add styles dynamically
-    const style = document.createElement("style");
-    style.innerHTML = `
-        /* Modal Background */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+            /* Close Button */
+            .close {
+                color: white;
+                float: right;
+                font-size: 24px;
+                cursor: pointer;
+            }
 
-        /* Modal Content */
-        .modal-content {
-            background-color: #2F6C7E;
-            color: white;
-            padding: 20px;
-            border-radius: 10px;
-            width: 400px;
-            text-align: center;
-        }
+            .close:hover {
+                color: red;
+            }
 
-        /* Close Button */
-        .close {
-            color: white;
-            float: right;
-            font-size: 24px;
-            cursor: pointer;
-        }
+            /* Gender Icons */
+            .gender-options img {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                margin: 5px;
+                cursor: pointer;
+                border: 2px solid transparent;
+            }
 
-        .close:hover {
-            color: red;
-        }
+            .gender-options img:hover,
+            .gender-options img:active {
+                border: 2px solid white;
+            }
 
-        /* Gender Icons */
-        .gender-options img {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            margin: 5px;
-            cursor: pointer;
-            border: 2px solid transparent;
-        }
+            /* Interests Styling */
+            .interests label {
+                display: block;
+                background: #4C96AD;
+                padding: 10px;
+                margin: 5px;
+                border-radius: 20px;
+                cursor: pointer;
+            }
 
-        .gender-options img:hover {
-            border: 2px solid white;
-        }
+            /* Quantity Selector */
+            .quantity-container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 10px 0;
+            }
 
-        .gender-options img:active {
-            border: 2px solid white;
-        }
+            .qty-btn {
+                background: white;
+                color: #2F6C7E;
+                border: none;
+                padding: 10px;
+                cursor: pointer;
+                font-size: 18px;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                margin: 0 5px;
+            }
 
-        /* Interests Styling */
-        .interests label {
-            display: block;
-            background: #4C96AD;
-            padding: 10px;
-            margin: 5px;
-            border-radius: 20px;
-            cursor: pointer;
-        }
+            .qty-btn:hover {
+                background: #4C96AD;
+                color: white;
+            }
 
-        .tab-button {
-            padding: 10px 20px;
-            font-size: 18px;
-            border: none;
-            background-color: #2F6C7E;
-            color: white;
-            cursor: pointer;
-            border-radius: 5px;
-        }
+            .quantity {
+                width: 50px;
+                text-align: center;
+                font-size: 18px;
+                border: none;
+                padding: 5px;
+                border-radius: 5px;
+            }
 
-        .tab-button:hover {
-            background-color: #4C96AD;
-        }
-    `;
-    document.head.appendChild(style);
+            /* Add to Cart Button */
+            .add-to-cart {
+                margin-top: 10px;
+                padding: 10px 20px;
+                font-size: 18px;
+                border: none;
+                background-color: #4C96AD;
+                color: white;
+                cursor: pointer;
+                border-radius: 5px;
+            }
 
-    // Open modal event
-    button.addEventListener("click", function () {
+            .add-to-cart:hover {
+                background-color: #2F6C7E;
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Open modal
         modal.style.display = "flex";
-    });
 
-    // Close modal event
-    modal.querySelector(".close").addEventListener("click", function () {
-        modal.style.display = "none";
-    });
-
-    // Close when clicking outside modal
-    window.addEventListener("click", function (event) {
-        if (event.target === modal) {
+        // Close modal event
+        modal.querySelector(".close").addEventListener("click", function () {
             modal.style.display = "none";
-        }
+        });
+
+        // Close when clicking outside modal
+        window.addEventListener("click", function (event) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        });
+
+        // Quantity selector functionality
+        const minusBtn = modal.querySelector(".minus");
+        const plusBtn = modal.querySelector(".plus");
+        const quantityInput = modal.querySelector(".quantity");
+        const addToCartBtn = modal.querySelector(".add-to-cart");
+
+        minusBtn.addEventListener("click", () => {
+            let currentValue = parseInt(quantityInput.value);
+            if (currentValue > 1) {
+                quantityInput.value = currentValue - 1;
+            }
+        });
+
+        plusBtn.addEventListener("click", () => {
+            let currentValue = parseInt(quantityInput.value);
+            quantityInput.value = currentValue + 1;
+        });
+
+        addToCartBtn.addEventListener("click", () => {
+            alert(`Přidáno do košíku: ${quantityInput.value}x Mini Mystery Box`);
+        });
     });
-     });
 
 
   // Po přidání Mystery Box vložte galerii
