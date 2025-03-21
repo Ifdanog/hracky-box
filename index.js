@@ -74,6 +74,155 @@ document.addEventListener("DOMContentLoaded", function () {
     mysteryBox.insertAdjacentElement("afterend", tabSection);
   }
 
+  document.addEventListener("DOMContentLoaded", function () {
+    // Create the button
+    const button = document.createElement("button");
+    button.classList.add("tab-button");
+    button.innerText = "Open Mystery Box";
+    document.body.appendChild(button);
+
+    // Create the modal container
+    const modal = document.createElement("div");
+    modal.id = "popup-modal";
+    modal.classList.add("modal");
+
+    // Modal content
+    modal.innerHTML = `
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Mini Mystery Box</h2>
+            <p><strong>599 CZK</strong></p>
+
+            <h3>Who is the Mystery Box for?</h3>
+            <p>Select Gender</p>
+            <div class="gender-options">
+                <img src="female.png" alt="Female">
+                <img src="male.png" alt="Male">
+                <img src="both.png" alt="Both">
+            </div>
+
+            <p>Select Age</p>
+            <select>
+                <option>Select an option</option>
+                <option>Child</option>
+                <option>Teen</option>
+                <option>Adult</option>
+            </select>
+
+            <h3>Select interests (optional)</h3>
+            <div class="interests">
+                <label><input type="checkbox"> Electronics 🖥️</label>
+                <label><input type="checkbox"> Car accessories 🚗</label>
+                <label><input type="checkbox"> Gaming 🎮</label>
+                <label><input type="checkbox"> Home Comfort 🏠</label>
+                <label><input type="checkbox"> Beauty 💄</label>
+                <label><input type="checkbox"> Garden 🌿</label>
+                <label><input type="checkbox"> Handyman 🔨</label>
+            </div>
+        </div>
+    `;
+
+    document.body.appendChild(modal);
+
+    // Add styles dynamically
+    const style = document.createElement("style");
+    style.innerHTML = `
+        /* Modal Background */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Modal Content */
+        .modal-content {
+            background-color: #2F6C7E;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 400px;
+            text-align: center;
+        }
+
+        /* Close Button */
+        .close {
+            color: white;
+            float: right;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: red;
+        }
+
+        /* Gender Icons */
+        .gender-options img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin: 5px;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+
+        .gender-options img:hover {
+            border: 2px solid white;
+        }
+
+        /* Interests Styling */
+        .interests label {
+            display: block;
+            background: #4C96AD;
+            padding: 10px;
+            margin: 5px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        .tab-button {
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            background-color: #2F6C7E;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .tab-button:hover {
+            background-color: #4C96AD;
+        }
+    `;
+    document.head.appendChild(style);
+
+    // Open modal event
+    button.addEventListener("click", function () {
+        modal.style.display = "flex";
+    });
+
+    // Close modal event
+    modal.querySelector(".close").addEventListener("click", function () {
+        modal.style.display = "none";
+    });
+
+    // Close when clicking outside modal
+    window.addEventListener("click", function (event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+});
+
+
   // Po přidání Mystery Box vložte galerii
   const tabSection = document.querySelector(".tab-section");
   if (tabSection) {
