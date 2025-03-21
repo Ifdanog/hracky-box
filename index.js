@@ -93,19 +93,19 @@ document.addEventListener("DOMContentLoaded", function () {
                 <p>Select Age</p>
                 <select>
                     <option>Select an option</option>
-                    <option>5-6 years</option>
-                    <option>7-8 years</option>
-                    <option>9-13 years</option>
-                    <option>14-17 years old</option>
-                    <option>18-21 years old</option>
-                    <option>22-25 years old</option>
-                    <option>26-29 years old</option>
-                    <option>30-35 years old</option>
-                    <option>36-44 years old</option>
-                    <option>45-54 years old</option>
-                    <option>55-64 years old</option>
-                    <option>65-74 years old</option>
-                    <option>75 years and over</option>
+                    <option value="5-6 years">5-6 years</option>
+                    <option value="7-8 years>7-8 years</option>
+                    <option value="9-13 years>9-13 years</option>
+                    <option value="14-17 years>14-17 years old</option>
+                    <option value="18-21 years>18-21 years old</option>
+                    <option value="22-25 years>22-25 years old</option>
+                    <option value="26-29 years>26-29 years old</option>
+                    <option value="30-35 years>30-35 years old</option>
+                    <option value="36-44 years>36-44 years old</option>
+                    <option value="45-54 years>45-54 years old</option>
+                    <option value="55-64 years>55-64 years old</option>
+                    <option value="65-74 years>65-74 years old</option>
+                    <option value="75 years+>75 years and over</option>
                 </select>
                 <!-- Quantity Selector -->
                 <h3>Quantity</h3>
@@ -123,7 +123,6 @@ document.addEventListener("DOMContentLoaded", function () {
         document.body.appendChild(modal);
 
     const addToCart = document.querySelector("#add-to-cart-btn");
-    console.log(addToCart);
     addToCart.addEventListener("click", function () {
     const productId = 45;
     const language = "cs";
@@ -131,7 +130,7 @@ document.addEventListener("DOMContentLoaded", function () {
     
     // Get selected variant
     const selectedGender = document.querySelector(".gender-options img.active")?.alt || "Male";
-    const selectedAge = document.querySelector(".age-options select").value || "3years";
+    const selectedAge = document.querySelector(".age-options select").value || "5-6years";
     const variantKey = `${selectedGender}-${selectedAge}`;
     
     // Get correct priceId
