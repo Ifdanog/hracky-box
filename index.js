@@ -136,7 +136,7 @@ document.addEventListener("DOMContentLoaded", function () {
         formData.append("priceId", priceId);
         formData.append("language", language);
         formData.append("amount", quantity);
-console.log(formData);
+
         fetch("https://www.hracky-box.cz/action/Cart/addCartItem/?simple_ajax_cart=1", {
             method: "POST",
             body: formData,
@@ -146,8 +146,7 @@ console.log(formData);
         })
         .then(response => response.json())
         .then(data => {
-          console.log(data);
-            if (data.status === "success") {
+            if (data.code === 200) {
                 alert("Product successfully added to cart!");
             } else {
                 alert("Error adding product to cart.");
