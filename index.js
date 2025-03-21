@@ -107,18 +107,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     <option>65-74 years old</option>
                     <option>75 years and over</option>
                 </select>
-
-                <h3>Select interests (optional)</h3>
-                <div class="interests">
-                    <label><input type="checkbox"> Electronics 🖥️</label>
-                    <label><input type="checkbox"> Car accessories 🚗</label>
-                    <label><input type="checkbox"> Gaming 🎮</label>
-                    <label><input type="checkbox"> Home Comfort 🏠</label>
-                    <label><input type="checkbox"> Beauty 💄</label>
-                    <label><input type="checkbox"> Garden 🌿</label>
-                    <label><input type="checkbox"> Handyman 🔨</label>
-                </div>
-
                 <!-- Quantity Selector -->
                 <h3>Quantity</h3>
                 <div class="quantity-container">
