@@ -216,6 +216,7 @@ document.addEventListener("DOMContentLoaded", function () {
             modal.style.display = "none";
         }
     });
+     });
 
 
   // Po přidání Mystery Box vložte galerii
