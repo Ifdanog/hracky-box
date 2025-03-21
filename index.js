@@ -122,8 +122,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         document.body.appendChild(modal);
 
-    const addToCartBtn = document.querySelector("#add-to-cart-btn");
-    addToCartBtn.addEventListener("click", function (event) {
+    const addToCart = document.querySelector("#add-to-cart-btn");
+    addToCart.addEventListener("click", function (event) {
         const productId = 45; // Replace with your actual product ID
         const priceId = 66; // Ensure this matches the selected variant
         const language = "cs"; // Czech language
