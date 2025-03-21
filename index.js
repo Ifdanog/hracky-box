@@ -111,7 +111,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <h3>Quantity</h3>
                 <div class="quantity-container">
                     <button class="qty-btn minus">−</button>
-                    <input type="number" class="quantity" value="1" min="1">
+                    <input id="product-quantity" type="number" class="quantity" value="1" min="1">
                     <button class="qty-btn plus">+</button>
                 </div>
 
@@ -184,6 +184,10 @@ console.log(formData);
                 text-align: center;
             }
 
+             .modal-content h2, .modal-content h3  {
+                color: white;
+            }
+
             /* Close Button */
             .close {
                 color: white;
@@ -251,6 +255,7 @@ console.log(formData);
                 width: 50px;
                 text-align: center;
                 font-size: 18px;
+                color: black;
                 border: none;
                 padding: 5px;
                 border-radius: 5px;
