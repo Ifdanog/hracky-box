@@ -177,6 +177,10 @@ document.addEventListener("DOMContentLoaded", function () {
             border: 2px solid white;
         }
 
+        .gender-options img:active {
+            border: 2px solid white;
+        }
+
         /* Interests Styling */
         .interests label {
             display: block;
