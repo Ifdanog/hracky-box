@@ -48,15 +48,21 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     ];
 
-    tabs.forEach((tab) => {
-      const button = document.createElement("button");
-      button.classList.add("tab-button");
-      button.textContent = `Záložka ${tab.label}`;
-      button.style.backgroundColor = tab.color;
-      button.addEventListener("mouseenter", () => {
-        tabContent.innerHTML = tab.content;
-      });
-      tabButtons.appendChild(button);
+    tabs.forEach((tab, index) => {
+        const button = document.createElement("button");
+        button.classList.add("tab-button");
+        button.textContent = `Záložka ${tab.label}`;
+        button.style.backgroundColor = tab.color;
+        button.addEventListener("mouseenter", () => {
+            tabContent.innerHTML = tab.content;
+        });
+
+        tabButtons.appendChild(button);
+
+        // Show first tab by default
+        if (index === 0) {
+            tabContent.innerHTML = tab.content;
+        }
     });
 
     tabSection.appendChild(tabButtons);
