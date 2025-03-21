@@ -123,6 +123,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.body.appendChild(modal);
 
     const addToCart = document.querySelector("#add-to-cart-btn");
+    console.log(addToCart);
     addToCart.addEventListener("click", function (event) {
         const productId = 45; // Replace with your actual product ID
         const priceId = 66; // Ensure this matches the selected variant
