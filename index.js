@@ -92,17 +92,27 @@ document.addEventListener("DOMContentLoaded", function () {
             <h3>Who is the Mystery Box for?</h3>
             <p>Select Gender</p>
             <div class="gender-options">
-                <img src="female.png" alt="Female">
-                <img src="male.png" alt="Male">
-                <img src="both.png" alt="Both">
+                <img src="https://mystery-box.cz/wp-content/uploads/2021/03/pohlavi-zena.png" alt="Female">
+                <img src="https://mystery-box.cz/wp-content/uploads/2021/03/pohlavi-muz.png" alt="Male">
+                <img src="https://mystery-box.cz/wp-content/uploads/2021/03/gender-par.png" alt="Both">
             </div>
 
             <p>Select Age</p>
             <select>
                 <option>Select an option</option>
-                <option>Child</option>
-                <option>Teen</option>
-                <option>Adult</option>
+                <option>5-6 years</option>
+                <option>7-8 years</option>
+                <option>9-13 years</option>
+                <option>14-17 years</option>
+                <option>18-21 years</option>
+                <option>22-25 years</option>
+                <option>26-29 years</option>
+                <option>30-35 years</option>
+                <option>36-44 years</option>
+                <option>45-54 years</option>
+                <option>55-64 years</option>
+                <option>65-74 years</option>
+                <option>75 years and over</option>
             </select>
 
             <h3>Select interests (optional)</h3>
