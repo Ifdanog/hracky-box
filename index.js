@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 </div>
 
                 <p>Select Age</p>
-                <select>
+                <select class="age-options">
                     <option>Select an option</option>
                     <option value="5-6 years">5-6 years</option>
                     <option value="7-8 years>7-8 years</option>
@@ -130,7 +130,7 @@ document.addEventListener("DOMContentLoaded", function () {
     
     // Get selected variant
     const selectedGender = document.querySelector(".gender-options img.active")?.alt || "Male";
-    const selectedAge = document.querySelector(".age-options select").value || "5-6years";
+    const selectedAge = document.querySelector(".age-options").value || "5-6years";
     const variantKey = `${selectedGender}-${selectedAge}`;
     
     // Get correct priceId
